@@ -1,0 +1,17 @@
+{
+  "name": "bellcorp-event-management",
+  "version": "1.0.0",
+  "description": "Bellcorp Event Management Application",
+  "scripts": {
+    "server": "cd server && npm start",
+    "client": "cd client && npm run dev",
+    "start": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "concurrently \"cd server && npm install\" \"cd client && npm install\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
