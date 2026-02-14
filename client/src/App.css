@@ -34,6 +34,29 @@ body {
   margin-left: 0;
 }
 
-.content {
-  min-height: calc(100vh - 70px);
+min-height: calc(100vh - 70px);
+}
+
+/* Global Background for the entire application */
+body {
+  background-image: url('/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  position: relative;
+}
+
+/* Dark Overlay */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 24, 39, 0.85);
+  /* Dark overlay */
+  z-index: -1;
+  /* Behind content */
+  pointer-events: none;
 }

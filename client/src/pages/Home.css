@@ -2,27 +2,12 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background-image: url('/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    position: relative;
-    overflow-x: hidden;
-    /* Fix horizontal scroll */
+    /* Background is now handled globally in App.css */
 }
 
-/* Overlay for readability across the whole page */
+/* Overlay handled globally */
 .home-layout::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(17, 24, 39, 0.85);
-    /* Dark overlay */
-    z-index: 0;
-    pointer-events: none;
+    display: none;
 }
 
 /* Ensure content is above overlay */
