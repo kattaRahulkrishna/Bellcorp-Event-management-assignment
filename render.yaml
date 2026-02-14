@@ -2,7 +2,7 @@ services:
   - type: web
     name: bellcorp-backend
     env: node
-    root: server
+    rootDir: server
     buildCommand: npm install
     startCommand: node server.js
     envVars:
