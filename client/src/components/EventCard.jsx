@@ -58,7 +58,7 @@ function getCategoryImage(category) {
         'Music': 'photo-1501281668745-f7f57925c3b4',
         'Art': 'photo-1460661419201-fd4cecdf8a8b',
         'Business': 'photo-1515187029135-18ee286d815b',
-        'Health': 'photo-1544367563-12123d8966cd',
+        'Health': 'photo-1506126613408-eca07ce68773', // Yoga/Wellness
         'Food': 'photo-1555939594-58d7cb561ad1',
         'Sports': 'photo-1461896836934-ffe607ba8211'
     };

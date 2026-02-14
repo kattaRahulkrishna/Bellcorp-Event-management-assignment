@@ -2,38 +2,50 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-}
-
-/* Hero Section */
-.hero-section {
-    position: relative;
-    height: 400px;
     background-image: url('https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=2070&auto=format&fit=crop');
-    /* Concert crowd image */
     background-size: cover;
     background-position: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    text-align: center;
+    background-attachment: fixed;
+    position: relative;
+    overflow-x: hidden;
+    /* Fix horizontal scroll */
 }
 
-.hero-overlay {
+/* Overlay for readability across the whole page */
+.home-layout::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.5);
+    background: rgba(17, 24, 39, 0.85);
+    /* Dark overlay */
+    z-index: 0;
+    pointer-events: none;
+}
+
+/* Ensure content is above overlay */
+.home-layout>* {
+    position: relative;
     z-index: 1;
 }
 
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    padding: 0 20px;
+/* Hero Section - Remove specific background, keep layout */
+.hero-section {
+    height: 300px;
+    /* Reduced height since bg is global */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-align: center;
+    background: transparent;
+}
+
+.hero-overlay {
+    display: none;
+    /* Removed local overlay */
 }
 
 .hero-content h1 {
@@ -41,6 +53,7 @@
     font-weight: 700;
     margin-bottom: 2rem;
     text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
 }
 
 /* Hero Search */
@@ -138,8 +151,10 @@
 .categories-section h2 {
     font-size: 1.5rem;
     font-weight: 600;
-    color: #111827;
+    color: #f3f4f6;
+    /* Light text for dark bg */
     margin-bottom: 1.5rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .event-grid {
@@ -163,20 +178,25 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.1);
+    /* Glassmorphism */
+    padding: 15px;
+    border-radius: 12px;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: transform 0.2s, background 0.2s;
+    backdrop-filter: blur(5px);
 }
 
 .category-card:hover {
     transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.2);
 }
 
 .category-icon {
     width: 64px;
     height: 64px;
-    background-color: #eff6ff;
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -187,8 +207,9 @@
 
 .category-name {
     font-size: 0.9rem;
-    font-weight: 500;
-    color: #4b5563;
+    font-weight: 600;
+    color: #f3f4f6;
+    /* Light text */
 }
 
 .loading,
@@ -196,8 +217,9 @@
     text-align: center;
     padding: 2rem;
     font-size: 1.1rem;
+    color: #f3f4f6;
 }
 
 .error {
-    color: #ef4444;
+    color: #f87171;
 }
