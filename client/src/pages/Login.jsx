@@ -45,6 +45,9 @@ const Login = () => {
                 </div>
                 <button type="submit" className="btn-primary">Login</button>
             </form>
+            <p className="auth-footer">
+                Don't have an account? <Link to="/register">Sign up</Link>
+            </p>
         </div>
     );
 };
