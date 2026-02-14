@@ -34,7 +34,8 @@ body {
   margin-left: 0;
 }
 
-min-height: calc(100vh - 70px);
+.content {
+  min-height: calc(100vh - 70px);
 }
 
 /* Global Background for the entire application */
