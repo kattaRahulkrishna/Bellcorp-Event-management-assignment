@@ -66,11 +66,30 @@ const Home = () => {
             </section>
 
             <div className="main-container">
+                <section className="categories-section">
+                    <h2>Explore Categories</h2>
+                    <div className="categories-grid">
+                        {categories.map((cat) => (
+                            <button
+                                key={cat.name}
+                                className="category-card"
+                                onClick={() => {
+                                    setFilterCategory(cat.name);
+                                    fetchEvents({ category: cat.name });
+                                }}
+                            >
+                                <div className="category-icon">{cat.icon}</div>
+                                <span className="category-name">{cat.name}</span>
+                            </button>
+                        ))}
+                    </div>
+                </section>
+
                 <section className="filters-section">
                     <div className="filter-tabs">
-                        <button className="filter-tab active">Date</button>
-                        <button className="filter-tab">Location</button>
-                        <button className="filter-tab">Category</button>
+                        <button className="filter-tab active">All Events</button>
+                        <button className="filter-tab">This Weekend</button>
+                        <button className="filter-tab">Free</button>
                     </div>
                 </section>
 
@@ -91,25 +110,6 @@ const Home = () => {
                             )}
                         </div>
                     )}
-                </section>
-
-                <section className="categories-section">
-                    <h2>Explore Categories</h2>
-                    <div className="categories-grid">
-                        {categories.map((cat) => (
-                            <button
-                                key={cat.name}
-                                className="category-card"
-                                onClick={() => {
-                                    setFilterCategory(cat.name);
-                                    fetchEvents({ category: cat.name });
-                                }}
-                            >
-                                <div className="category-icon">{cat.icon}</div>
-                                <span className="category-name">{cat.name}</span>
-                            </button>
-                        ))}
-                    </div>
                 </section>
             </div>
 

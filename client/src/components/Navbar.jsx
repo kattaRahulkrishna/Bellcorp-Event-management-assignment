@@ -27,10 +27,8 @@ const Navbar = () => {
                 <div className="navbar-auth">
                     {user ? (
                         <div className="user-menu">
-                            <span className="user-name">{user.username}</span>
-                            <button onClick={handleLogout} className="btn-logout" title="Logout">
-                                <span className="logout-icon">⏻</span>
-                            </button>
+                            <span className="user-name">Hello, {user.username}</span>
+                            <button onClick={handleLogout} className="btn-logout-text">Logout</button>
                         </div>
                     ) : (
                         <div className="auth-buttons">

@@ -46,47 +46,52 @@
 /* Hero Search */
 .hero-search-form {
     background: white;
-    padding: 8px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    padding: 6px;
+    border-radius: 50px;
+    /* Pill shape */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     max-width: 600px;
     margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .search-input-wrapper {
     display: flex;
     align-items: center;
-    gap: 10px;
+    padding-left: 15px;
 }
 
 .search-icon {
     font-size: 1.2rem;
-    padding-left: 10px;
-    color: #9ca3af;
+    color: #6b7280;
 }
 
 .search-input-wrapper input {
     flex: 1;
     border: none;
-    padding: 12px;
+    padding: 15px;
     font-size: 1rem;
     outline: none;
+    color: #374151;
+    background: transparent;
 }
 
 .search-btn {
-    background-color: #3b82f6;
-    /* Blue */
+    background-color: #10b981;
+    /* Greenish/Teal popular in event apps */
     color: white;
     border: none;
-    padding: 10px 24px;
-    border-radius: 6px;
+    padding: 12px 30px;
+    border-radius: 40px;
     font-weight: 600;
     cursor: pointer;
-    transition: background-color 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
+    margin: 2px;
 }
 
 .search-btn:hover {
-    background-color: #2563eb;
+    background-color: #059669;
+    transform: scale(1.02);
 }
 
 /* Main Container */
