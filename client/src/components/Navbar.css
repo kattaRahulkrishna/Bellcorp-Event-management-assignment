@@ -1,45 +1,118 @@
+:root {
+    --primary-color: #3b82f6;
+    /* Blue matching the design */
+    --primary-hover: #2563eb;
+    --dark-bg: #1f2937;
+    --darker-bg: #111827;
+    --text-white: #ffffff;
+    --text-gray: #9ca3af;
+}
+
 .navbar {
+    background-color: var(--darker-bg);
+    color: var(--text-white);
+    padding: 0.75rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    color: white;
-    padding: 1rem 2rem;
 }
 
-.navbar-brand a {
-    color: white;
-    font-size: 1.5rem;
-    font-weight: bold;
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-white);
     text-decoration: none;
 }
 
-.navbar-links {
+.logo-icon {
     display: flex;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    color: var(--primary-color);
+    font-size: 1.1rem;
+}
+
+.navbar-menu {
+    display: flex;
+    gap: 2rem;
     align-items: center;
 }
 
-.navbar-links a {
-    color: #ddd;
+.nav-link {
+    color: var(--text-gray);
     text-decoration: none;
-    transition: color 0.3s;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
-.navbar-links a:hover {
+.nav-link:hover {
+    color: var(--text-white);
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
     color: white;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user-name {
+    font-weight: 500;
+    color: var(--text-white);
 }
 
 .btn-logout {
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 0.5rem 1rem;
+    background: transparent;
+    border: 1px solid var(--text-gray);
+    color: var(--text-gray);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
-    border-radius: 4px;
-    font-size: 0.9rem;
+    transition: all 0.2s;
 }
 
 .btn-logout:hover {
-    background-color: #c82333;
+    border-color: #ef4444;
+    color: #ef4444;
+}
+
+.logout-icon {
+    font-size: 0.8rem;
 }

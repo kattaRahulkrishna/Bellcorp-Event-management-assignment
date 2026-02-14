@@ -14,22 +14,30 @@ const Navbar = () => {
 
     return (
         <nav className="navbar">
-            <div className="navbar-brand">
-                <Link to="/">Bellcorp Events</Link>
-            </div>
-            <div className="navbar-links">
-                <Link to="/">Events</Link>
-                {user ? (
-                    <>
-                        <Link to="/dashboard">Dashboard</Link>
-                        <button onClick={handleLogout} className="btn-logout">Logout</button>
-                    </>
-                ) : (
-                    <>
-                        <Link to="/login">Login</Link>
-                        <Link to="/register">Register</Link>
-                    </>
-                )}
+            <div className="navbar-container">
+                <Link to="/" className="navbar-logo">
+                    <span className="logo-icon">B</span> Bellcorp Events
+                </Link>
+
+                <div className="navbar-menu">
+                    <Link to="/" className="nav-link">Browse Events</Link>
+                    {user && <Link to="/dashboard" className="nav-link">My Dashboard</Link>}
+                </div>
+
+                <div className="navbar-auth">
+                    {user ? (
+                        <div className="user-menu">
+                            <span className="user-name">{user.username}</span>
+                            <button onClick={handleLogout} className="btn-logout" title="Logout">
+                                <span className="logout-icon">⏻</span>
+                            </button>
+                        </div>
+                    ) : (
+                        <div className="auth-buttons">
+                            <Link to="/login" className="btn-primary">Login/Register</Link>
+                        </div>
+                    )}
+                </div>
             </div>
         </nav>
     );
